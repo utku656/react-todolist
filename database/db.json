@@ -8,32 +8,25 @@
       "isImportant": true
     },
     {
-      "id": 3,
-      "text": "Complete Getir Tasks",
+      "text": "Complete Todo Tasks",
       "deadline": "2017-05-24T10:30",
+      "isImportant": true,
       "status": "In-Progress",
-      "isImportant": true
+      "id": 3
     },
     {
-      "text": "Buy Bread2",
+      "text": "Buy Bread from Market",
       "deadline": "2021-12-23T16:56",
       "isImportant": false,
       "status": "In-Progress",
       "id": 4
     },
     {
-      "text": "adssd22",
-      "deadline": "2021-12-22T18:02",
+      "text": "Run!",
+      "deadline": "2021-12-22T08:55",
       "isImportant": false,
       "status": "Incomplete",
       "id": 5
-    },
-    {
-      "text": "asda",
-      "deadline": "2021-12-23T19:40",
-      "status": "Incomplete",
-      "isImportant": true,
-      "id": 6
     }
   ]
 }

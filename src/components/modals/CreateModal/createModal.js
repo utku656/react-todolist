@@ -11,26 +11,37 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import './createModal.css';
 
 function CreateModal(props) {
-    const [status, setStatus] = useState('');
+    const [status, setStatus] = useState('Incomplete');
     const [isImportant, setIsImportant] = useState(false);
     const [task, setTask] = useState('');
     const [deadline, setDeadline] = useState('');
+    const [submitDisable, setSubmitDisable] = useState(true);
 
-
-    const handleChange = (value) => {
-
+    const handleChangeSelect = (value) => {
+        if (task !== '' && deadline !== '' && value !== '') {
+            setSubmitDisable(false);
+        } else {
+            setSubmitDisable(true);
+        }
         setStatus(value);
     }
     const handleChangeCheckbox = () => {
-
         setIsImportant(!isImportant);
     }
     const handleChangeTask = (value) => {
-
+        if (value !== '' && deadline !== '' && status !== '') {
+            setSubmitDisable(false);
+        } else {
+            setSubmitDisable(true);
+        }
         setTask(value);
     }
     const handleChangeDeadline = (value) => {
-
+        if (task !== '' && value !== '' && status !== '') {
+            setSubmitDisable(false);
+        } else {
+            setSubmitDisable(true);
+        }
         setDeadline(value);
     }
     const handleSubmit = () => {
@@ -62,7 +73,6 @@ function CreateModal(props) {
                     id="datetime-local"
                     label="Deadline"
                     type="datetime-local"
-                    defaultValue="2017-05-24T10:30"
                     value={deadline}
                     InputLabelProps={{
                         shrink: true,
@@ -75,7 +85,7 @@ function CreateModal(props) {
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     value={status}
-                    onChange={(event) => handleChange(event.target.value)}
+                    onChange={(event) => handleChangeSelect(event.target.value)}
                     className='field'
 
                 >
@@ -102,7 +112,7 @@ function CreateModal(props) {
                 <Button onClick={props.handleClose} color="primary">
                     Cancel
                 </Button>
-                <Button onClick={handleSubmit} color="primary">
+                <Button onClick={handleSubmit} disabled={submitDisable} color="primary">
                     Submit
                 </Button>
             </DialogActions>

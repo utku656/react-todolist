@@ -26,7 +26,9 @@ function Tasks(props) {
           <StarIcon />
         </ListItemIcon>
         : (null)}
-      <ListItemText primary={props.text} secondary={new Date(props.deadline).toUTCString()} />
+      <ListItemText 
+      primary={props.text} 
+      secondary={new Date(props.deadline).toLocaleString()} />
       
       <ListItemSecondaryAction>
       <IconButton edge="end" aria-label="delete" onClick={handleUpdate}>

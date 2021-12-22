@@ -15,18 +15,34 @@ function EditModal(props) {
     const [isImportant, setIsImportant] = useState(props.task.isImportant);
     const [task, setTask] = useState(props.task.text);
     const [deadline, setDeadline] = useState(props.task.deadline);
+    const [submitDisable, setSubmitDisable] = useState(true);
 
 
-    const handleChange = (value) => {
+    const handleChangeSelect = (value) => {
+        if(task !=='' && deadline !=='' && value!==''){
+            setSubmitDisable(false);
+        }else{
+            setSubmitDisable(true);
+        }
         setStatus(value);
     }
     const handleChangeCheckbox = () => {
         setIsImportant(!isImportant);
     }
     const handleChangeTask = (value) => {
+        if(value !=='' && deadline !=='' && status!==''){
+            setSubmitDisable(false);
+        }else{
+            setSubmitDisable(true);
+        }
         setTask(value);
     }
     const handleChangeDeadline = (value) => {
+        if(task !=='' && value !=='' && status!==''){
+            setSubmitDisable(false);
+        }else{
+            setSubmitDisable(true);
+        }
         setDeadline(value);
     }
     const handleSubmit = () => {
@@ -57,7 +73,6 @@ function EditModal(props) {
                     id="datetime-local"
                     label="Deadline"
                     type="datetime-local"
-                    defaultValue="2017-05-24T10:30"
                     value={deadline}
                     InputLabelProps={{
                         shrink: true,
@@ -69,7 +84,7 @@ function EditModal(props) {
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     value={status}
-                    onChange={(event) => handleChange(event.target.value)}
+                    onChange={(event) => handleChangeSelect(event.target.value)}
                     className='field'
                 >
                     <MenuItem value={'Completed'}>Completed</MenuItem>
@@ -92,7 +107,7 @@ function EditModal(props) {
                 <Button onClick={props.handleClose} color="primary">
                     Cancel
                 </Button>
-                <Button onClick={handleSubmit} color="primary">
+                <Button onClick={handleSubmit} disabled={submitDisable} color="primary">
                     Submit
                 </Button>
             </DialogActions>

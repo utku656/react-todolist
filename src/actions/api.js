@@ -3,8 +3,6 @@ import axios from 'axios';
 const BASE_URL ='http://localhost:8000'
 const getTasks = () => 
   axios.get(BASE_URL+'/tasks');
-const getTaskById = (id) => 
-  axios.get(BASE_URL+'/tasks/'+id);
 const createNewTask = (task) => 
   axios.post(BASE_URL+'/tasks',task);
 const updateById = (id,task) => 
@@ -19,7 +17,6 @@ const deleteById = (id) =>
 
   export{
       getTasks,
-      getTaskById,
       createNewTask,
       updateById,
       deleteById
