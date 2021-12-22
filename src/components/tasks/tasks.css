@@ -1,0 +1,19 @@
+.Completed{
+    background-color: #58D68D!important;
+    margin-top: 1rem!important;
+    border-radius: 25px!important;
+  border: 2px solid #73AD21!important;
+}
+.Incomplete{
+    background-color: #E74C3C!important;
+    border-radius: 25px!important;
+  border: 2px solid #73AD21!important;
+    margin-top: 1rem!important;
+}
+.In-Progress{
+    background-color: #F7DC6F!important;
+    border-radius: 25px!important;
+  border: 2px solid #73AD21!important;
+    margin-top: 1rem!important;
+
+}

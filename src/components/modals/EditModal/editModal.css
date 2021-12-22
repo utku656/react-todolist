@@ -1,0 +1,7 @@
+.modal-content{
+    display: grid;
+    width: 20rem;
+}
+.field{
+    margin-bottom: 1rem!important;
+}

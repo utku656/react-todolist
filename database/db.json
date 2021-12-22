@@ -1,0 +1,39 @@
+{
+  "tasks": [
+    {
+      "id": 2,
+      "text": "Complete Jira Tasks",
+      "deadline": "2017-05-24T10:30",
+      "status": "Completed",
+      "isImportant": true
+    },
+    {
+      "id": 3,
+      "text": "Complete Getir Tasks",
+      "deadline": "2017-05-24T10:30",
+      "status": "In-Progress",
+      "isImportant": true
+    },
+    {
+      "text": "Buy Bread2",
+      "deadline": "2021-12-23T16:56",
+      "isImportant": false,
+      "status": "In-Progress",
+      "id": 4
+    },
+    {
+      "text": "adssd22",
+      "deadline": "2021-12-22T18:02",
+      "isImportant": false,
+      "status": "Incomplete",
+      "id": 5
+    },
+    {
+      "text": "asda",
+      "deadline": "2021-12-23T19:40",
+      "status": "Incomplete",
+      "isImportant": true,
+      "id": 6
+    }
+  ]
+}
